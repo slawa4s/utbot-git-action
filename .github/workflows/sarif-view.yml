@@ -2,8 +2,8 @@ name: "Upload SARIF"
 
 # Run workflow each time code is pushed to your repository and on a schedule.
 # The scheduled workflow runs every at 00:00 on Sunday UTC time.
-on:
-  push:
+
+on: [pull_request, issues]
 
 jobs:
   build:
@@ -13,7 +13,6 @@ jobs:
       pull-requests: write
       contents: write
     steps:
-    # This step checks out a copy of your repository.
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Upload SARIF file
@@ -21,3 +20,4 @@ jobs:
       with:
         # Path to SARIF file relative to the root of the repository
         sarif_file: test.sarif
+        
