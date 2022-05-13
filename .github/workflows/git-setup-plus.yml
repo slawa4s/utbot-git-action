@@ -13,6 +13,6 @@ jobs:
           path: utbot
           submodules: 'recursive'
           ref: sarifResult
-      - run: dc utbot/ | ls
+      - run: cd utbot/ | ls
       
       - run: g++ main.cpp  && ./a.out
