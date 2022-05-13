@@ -13,6 +13,5 @@ chmod +x unpack_and_run_utbot.sh
 
 export CURRENT_FOLDER="$( cd $( dirname ${BASH_SOURCE[0]} ) && pwd )"
 RUN_SYSTEM_SCRIPT_PATH=$CURRENT_FOLDER/utbot_run_system.sh
-UTBOT_CLI_OPTIONS="generate --project-path /home/slawa4s/utbot-git-action/tests project"
+UTBOT_CLI_OPTIONS="generate --project-path /home/slawa4s/utbot-git-action/project project"
 $RUN_SYSTEM_SCRIPT_PATH "cli" $UTBOT_CLI_OPTIONS
-    #./utbot_run_system.sh cli generate -p "/home/slawa4s/bot-test/tests" file --file-path "/home/slawa4s/bot-test/tests/main.c"
