@@ -1,0 +1,9 @@
+name: GitHub Actions Plus Plus
+on: [push]
+jobs:
+  Load-cpp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: C++ has cloned
+        uses: Trass3r/setup-cpp@master
+      - run: echo "C++ has been loaded!"
