@@ -12,4 +12,5 @@ jobs:
           repository: olezhabobrov/UTBotCpp
           path: utbot
           submodules: 'recursive'
+          ref: sarifResult
       - run: g++ main.cpp  && ./a.out
