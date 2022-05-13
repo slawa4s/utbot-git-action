@@ -4,5 +4,12 @@ jobs:
   Load-cpp:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout local repo
+        uses: actions/checkout@v3
+      - name: Checkout utbot repo
+        uses: actions/checkout@v3
+        with:
+          repository: olezhabobrov/UTBotCpp
+          path: utbot
+          submodules: 'recursive'
       - run: g++ main.cpp  && ./a.out
