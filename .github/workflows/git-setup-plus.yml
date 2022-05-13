@@ -4,7 +4,7 @@ jobs:
   Load-cpp:
     runs-on: ubuntu-latest
     steps:
-      - name: C++ has cloned
+      - name: C++
         uses: Trass3r/setup-cpp@master
-      - run: echo "C++ has been loaded!"
+      - uses: actions/checkout@v3
       - run: g++ main.cpp  && ./a.out
