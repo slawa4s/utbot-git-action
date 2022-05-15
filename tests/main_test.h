@@ -281,6 +281,10 @@ extern "C" void buggy_function2_main_c(int a);
 static void buggy_function2(int a) {
 return buggy_function2_main_c(a);
 }
+extern "C" int buggy_function3_main_c(int a);
+static int buggy_function3(int a) {
+return buggy_function3_main_c(a);
+}
 extern "C" int main_main_c();
 static int main() {
 return main_main_c();

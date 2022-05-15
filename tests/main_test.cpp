@@ -24,6 +24,13 @@ TEST(regression, buggy_function2_test_1)
 }
 
 
+TEST(regression, buggy_function3_test_1)
+{
+    int actual = buggy_function3(2);
+    EXPECT_EQ(0, actual);
+}
+
+
 TEST(regression, main_test_1)
 {
     int actual = main();
@@ -39,7 +46,12 @@ TEST(error, buggy_function1_test_2)
 
 TEST(error, buggy_function2_test_2)
 {
-    buggy_function2(1);
+    buggy_function2(2);
+}
+
+TEST(error, buggy_function3_test_2)
+{
+    buggy_function3(0);
 }
 
 #pragma endregion

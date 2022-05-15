@@ -16,7 +16,7 @@
                                                         "uri": "tests/main_test.cpp"
                                                     },
                                                     "region": {
-                                                        "startLine": 42
+                                                        "startLine": 54
                                                     }
                                                 }
                                             }
@@ -28,7 +28,7 @@
                                                         "uri": "main.c"
                                                     },
                                                     "region": {
-                                                        "startLine": 9
+                                                        "startLine": 13
                                                     }
                                                 }
                                             }
@@ -46,15 +46,15 @@
                                     "uri": "main.c"
                                 },
                                 "region": {
-                                    "startLine": 9
+                                    "startLine": 13
                                 }
                             }
                         }
                     ],
                     "message": {
-                        "text": "ASSERTION FAIL: a == 0"
+                        "text": "overflow on division or remainder"
                     },
-                    "ruleId": "assert.err"
+                    "ruleId": "overflow.err"
                 },
                 {
                     "codeFlows": [
@@ -69,7 +69,7 @@
                                                         "uri": "tests/main_test.cpp"
                                                     },
                                                     "region": {
-                                                        "startLine": 37
+                                                        "startLine": 44
                                                     }
                                                 }
                                             }
@@ -106,6 +106,59 @@
                     ],
                     "message": {
                         "text": "ASSERTION FAIL: a == 42"
+                    },
+                    "ruleId": "assert.err"
+                },
+                {
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "tests/main_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 49
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "main.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 9
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "main.c"
+                                },
+                                "region": {
+                                    "startLine": 9
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "ASSERTION FAIL: a == 0"
                     },
                     "ruleId": "assert.err"
                 }
