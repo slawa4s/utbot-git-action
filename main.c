@@ -14,7 +14,8 @@ int buggy_function3(int a) {
 }
 
 int foo(int a) {
-    return assert(a == 13);
+    assert(a == 13);
+    return a;
 }
 
 int ritasexample(int a) {
