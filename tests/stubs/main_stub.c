@@ -1,4 +1,4 @@
-// 1652647127000000000
+// 1652649566000000000
 // Please, do not change the line above
 
 /*
@@ -41,6 +41,48 @@ int buggy_function3(int a) {
         cntCall--;
     }
     return buggy_function3_symbolic[cntCall++];
+}
+
+
+int foo_symbolic[10];
+int foo_symbolic[10];
+int foo(int a) {
+    static int firstTimeCall = 1;
+    static int cntCall = 0;
+    #ifdef KLEE_MODE
+        if (firstTimeCall == 1) {
+            firstTimeCall = 0;
+            klee_make_symbolic(&foo_symbolic, sizeof(foo_symbolic), "foo_symbolic");
+            for (int it_12_0 = 0; it_12_0 < 10; it_12_0 ++) {
+                klee_prefer_cex(foo_symbolic, foo_symbolic[it_12_0] >= -10  & foo_symbolic[it_12_0] <= 10);
+            }
+        }
+    #endif
+    if (cntCall == 10) {
+        cntCall--;
+    }
+    return foo_symbolic[cntCall++];
+}
+
+
+int ritasexample_symbolic[10];
+int ritasexample_symbolic[10];
+int ritasexample(int a) {
+    static int firstTimeCall = 1;
+    static int cntCall = 0;
+    #ifdef KLEE_MODE
+        if (firstTimeCall == 1) {
+            firstTimeCall = 0;
+            klee_make_symbolic(&ritasexample_symbolic, sizeof(ritasexample_symbolic), "ritasexample_symbolic");
+            for (int it_21_0 = 0; it_21_0 < 10; it_21_0 ++) {
+                klee_prefer_cex(ritasexample_symbolic, ritasexample_symbolic[it_21_0] >= -10  & ritasexample_symbolic[it_21_0] <= 10);
+            }
+        }
+    #endif
+    if (cntCall == 10) {
+        cntCall--;
+    }
+    return ritasexample_symbolic[cntCall++];
 }
 
 

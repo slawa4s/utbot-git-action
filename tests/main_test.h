@@ -285,6 +285,14 @@ extern "C" int buggy_function3_main_c(int a);
 static int buggy_function3(int a) {
 return buggy_function3_main_c(a);
 }
+extern "C" int foo_main_c(int a);
+static int foo(int a) {
+return foo_main_c(a);
+}
+extern "C" int ritasexample_main_c(int a);
+static int ritasexample(int a) {
+return ritasexample_main_c(a);
+}
 extern "C" int main_main_c();
 static int main() {
 return main_main_c();
