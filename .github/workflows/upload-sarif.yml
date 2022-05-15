@@ -1,11 +1,11 @@
 name: "Upload SARIF"
 
 on: 
-  push:
   workflow_call:
     inputs:
       utbot_version:
         default: "1.0.1"
+        required: true
         type: string
     
 jobs:
