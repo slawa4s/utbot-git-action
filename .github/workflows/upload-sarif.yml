@@ -20,4 +20,4 @@ jobs:
     - run: pwd
     - run: cd ${{ github.workspace }}/utbot-release-${{ env.utbot_version }}
     - run: pwd
-    - run: sh /utbot-release-${{ env.utbot_version }}/unpack_and_run_utbot.sh
+    - run: sh ${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/unpack_and_run_utbot.sh
