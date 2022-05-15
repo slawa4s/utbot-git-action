@@ -2,6 +2,14 @@ name: "Upload SARIF"
 
 on:
   workflow_dispatch:
+    inputs:
+      tests_push:
+        description:  Does test needs to be pushed
+        required: true
+        type: choice
+        options: 
+        - yes
+        - no
   
 env:
   utbot_version: "1.0.1"
