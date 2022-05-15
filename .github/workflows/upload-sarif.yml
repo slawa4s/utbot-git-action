@@ -13,10 +13,7 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    - run: "${GITHUB_ACTION_PATH}/commands.sh" # запустить скрипт
-      shell: sh # в интерпретаторе sh
-    - name: Upload SARIF file
-      uses: github/codeql-action/upload-sarif@v1
-      with:
-        # Path to SARIF file relative to the root of the repository
-        sarif_file: saifOutput.sarif
+    - run: mkdir utbot-release-${{ env.utbot_version }}
+    - run: wget https://github.com/slawa4s/UTBotCpp/releases/download/v$UTBOT_VERSION/utbot-release-$UTBOT_VERSION.zip -P "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}"
+    - run: unzip "{{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot-release-$UTBOT_VERSION.zip" -d "{{ github.workspace }}/utbot-release-$UTBOT_VERSION/"
+    - run: chmod +x "{{ github.workspace }}/utbot-release-${{ env.utbot_version }}/unpack_and_run_utbot.sh"
