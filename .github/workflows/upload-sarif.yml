@@ -1,7 +1,7 @@
 name: "Upload SARIF"
 
-on: 
-  push:
+on:
+  workflow_dispatch:
   
 env:
   utbot_version: "1.0.1"
@@ -19,3 +19,10 @@ jobs:
     - run: chmod +x "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/unpack_and_run_utbot.sh"
     - run: cd ${{ github.workspace }}/utbot-release-${{ env.utbot_version }} && ./unpack_and_run_utbot.sh
     - run: cd "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot_distr" && export CURRENT_FOLDER="$( cd $( dirname . ) && pwd )" && RUN_SYSTEM_SCRIPT_PATH=$CURRENT_FOLDER/utbot_run_system.sh && UTBOT_CLI_OPTIONS="generate --project-path ${{ github.workspace }} project" && $RUN_SYSTEM_SCRIPT_PATH "cli" $UTBOT_CLI_OPTIONS
+    - uses: EndBug/add-and-commit@v9
+      with:
+        add: 'tests saifOutput.sarif'
+        author_name: 'github-actions[utbot]'
+        message: 'added tests and sarif'
+        push: true
+    
