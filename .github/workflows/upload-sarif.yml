@@ -2,6 +2,9 @@ name: "Upload SARIF"
 
 on: 
   push:
+  
+env:
+  utbot_version: "1.0.1"
     
 jobs:
   build:
@@ -14,8 +17,8 @@ jobs:
     - name: Download UTBot binary and its dependencies
       uses: wei/wget@v1
       with:
-        args: https://github.com/slawa4s/UTBotCpp/releases/download/v1.0.1${{ github.event.inputs.utbot_version }}/utbot-release-1.0.1${{ github.event.inputs.utbot_version }}.zip
-    - run: unzip utbot-release-1.0.1${{ github.event.inputs.utbot_version }}.zip
+        args: https://github.com/slawa4s/UTBotCpp/releases/download/v${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip
+    - run: unzip utbot-release-${{ env.utbot_version }}.zip
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
       with:
