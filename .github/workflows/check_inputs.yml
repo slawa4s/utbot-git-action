@@ -6,6 +6,7 @@ on:
         default: 'john-doe'
         required: false
         type: string
+  push:
 
 jobs:
   print-username:
