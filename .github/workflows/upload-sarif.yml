@@ -1,10 +1,12 @@
 name: "Upload SARIF"
 
-# Run workflow each time code is pushed to your repository and on a schedule.
-# The scheduled workflow runs every at 00:00 on Sunday UTC time.
-on:
+on: 
   push:
 
+inputs:
+  utbot_version:
+    default: "1.0.1"
+    
 jobs:
   build:
     permissions: write-all
@@ -13,6 +15,11 @@ jobs:
     # This step checks out a copy of your repository.
     - name: Checkout repository
       uses: actions/checkout@v2
+    - name: Download UTBot binary and its dependencies
+      uses: wei/wget@v1
+      with:
+        args: https://github.com/slawa4s/UTBotCpp/releases/download/v${{ inputs.github_token }}/utbot-release-${{ inputs.github_token }}.zip
+    - run: unzip utbot-release-${{ inputs.github_token }}.zip
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
       with:
