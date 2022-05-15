@@ -11,8 +11,6 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
-    # This step checks out a copy of your repository.
-    - run: export first="$( cd $( dirname ${BASH_SOURCE[0]} ) && pwd )"
     - name: Checkout repository
       uses: actions/checkout@v2
     - run: mkdir utbot-release-${{ env.utbot_version }}
@@ -27,11 +25,9 @@ jobs:
     - run: cd utbot_distr/
     - run: export CURRENT_FOLDER="$( cd $( dirname ${BASH_SOURCE[0]} ) && pwd )"
     - run: RUN_SYSTEM_SCRIPT_PATH=$CURRENT_FOLDER/utbot_run_system.sh
-    - run: UTBOT_CLI_OPTIONS="generate --project-path ../.. project"
-    - run: echo $CURRENT_FOLDER
-    - run: cd $CURRENT_FOLDER
     - run: ls
-    - run: $CURRENT_FOLDER/utbot_run_system.sh "cli" "generate --project-path $first project"
+    - run: pwd
+    - run: $CURRENT_FOLDER/utbot_run_system.sh "cli" "generate --project-path . project"
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
       with:
