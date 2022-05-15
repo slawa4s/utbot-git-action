@@ -1,12 +1,6 @@
 name: "Upload SARIF"
 
 on: 
-  workflow_call:
-    inputs:
-      utbot_version:
-        default: "1.0.1"
-        required: false
-        type: string
   push:
     
 jobs:
@@ -15,15 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # This step checks out a copy of your repository.
-    - name: Print the input name to STDOUT
-      run: echo The username is ${{ github.event.inputs.username }}
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Download UTBot binary and its dependencies
       uses: wei/wget@v1
       with:
-        args: https://github.com/slawa4s/UTBotCpp/releases/download/v${{ github.event.inputs.utbot_version }}/utbot-release-${{ github.event.inputs.utbot_version }}.zip
-    - run: unzip utbot-release-${{ github.event.inputs.utbot_version }}.zip
+        args: https://github.com/slawa4s/UTBotCpp/releases/download/v1.0.1${{ github.event.inputs.utbot_version }}/utbot-release-1.0.1${{ github.event.inputs.utbot_version }}.zip
+    - run: unzip utbot-release-1.0.1${{ github.event.inputs.utbot_version }}.zip
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
       with:
