@@ -21,12 +21,20 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    - run: mkdir utbot-release-${{ env.utbot_version }}
-    - run: wget "https://github.com/slawa4s/UTBotCpp/releases/download/v${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -P "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}"
-    - run: unzip "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -d "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/"
-    - run: chmod +x "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/unpack_and_run_utbot.sh"
-    - run: cd ${{ github.workspace }}/utbot-release-${{ env.utbot_version }} && ./unpack_and_run_utbot.sh
-    - run: cd "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot_distr" && export CURRENT_FOLDER="$( cd $( dirname . ) && pwd )" && RUN_SYSTEM_SCRIPT_PATH=$CURRENT_FOLDER/utbot_run_system.sh && UTBOT_CLI_OPTIONS="generate --project-path ${{ github.workspace }} project" && $RUN_SYSTEM_SCRIPT_PATH "cli" $UTBOT_CLI_OPTIONS
+    - name: Download server executable
+      run: |
+           mkdir utbot-release-${{ env.utbot_version }}
+           wget "https://github.com/slawa4s/UTBotCpp/releases/download/v${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -P "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}"
+           unzip "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -d "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/"
+           chmod +x "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/unpack_and_run_utbot.sh"
+           cd ${{ github.workspace }}/utbot-release-${{ env.utbot_version }} && ./unpack_and_run_utbot.sh
+    - name: Testing project
+      run: |       
+          cd "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot_distr"
+          export CURRENT_FOLDER="$( cd $( dirname . ) && pwd )"
+          RUN_SYSTEM_SCRIPT_PATH=$CURRENT_FOLDER/utbot_run_system.sh
+          UTBOT_CLI_OPTIONS="generate --project-path ${{ github.workspace }} project"
+          $RUN_SYSTEM_SCRIPT_PATH "cli" $UTBOT_CLI_OPTIONS
     - name: Push into master
       uses: EndBug/add-and-commit@v9
       with:
