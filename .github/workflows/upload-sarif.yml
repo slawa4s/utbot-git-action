@@ -5,8 +5,9 @@ on:
     inputs:
       utbot_version:
         default: "1.0.1"
-        required: true
+        required: false
         type: string
+  push:
     
 jobs:
   build:
