@@ -7,6 +7,11 @@ on:
       utbot_version:
         default: "1.0.1"
         type: string
+      username:
+        description: 'A username passed from the caller workflow'
+        default: 'john-doe'
+        required: false
+        type: string
     
 jobs:
   build:
@@ -14,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # This step checks out a copy of your repository.
+    - name: Print the input name to STDOUT
+      run: echo The username is ${{ inputs.username }}
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Download UTBot binary and its dependencies
