@@ -17,3 +17,6 @@ jobs:
     - run: wget "https://github.com/slawa4s/UTBotCpp/releases/download/v${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -P "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}"
     - run: unzip "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -d "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/"
     - run: chmod +x "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/unpack_and_run_utbot.sh"
+    - run: pwd
+    - run: cd ${{ github.workspace }}/utbot-release-${{ env.utbot_version }}
+    - run: pwd
