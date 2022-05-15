@@ -14,6 +14,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
     - run: mkdir utbot-release-${{ env.utbot_version }}
-    - run: wget https://github.com/slawa4s/UTBotCpp/releases/download/v$UTBOT_VERSION/utbot-release-$UTBOT_VERSION.zip -P "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}"
-    - run: unzip "{{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot-release-$UTBOT_VERSION.zip" -d "{{ github.workspace }}/utbot-release-$UTBOT_VERSION/"
+    - run: wget "https://github.com/slawa4s/UTBotCpp/releases/download/v${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -P "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}"
+    - run: unzip "{{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -d "{{ github.workspace }}/utbot-release-${{ env.utbot_version }}/"
     - run: chmod +x "{{ github.workspace }}/utbot-release-${{ env.utbot_version }}/unpack_and_run_utbot.sh"
