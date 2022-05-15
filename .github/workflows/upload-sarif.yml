@@ -7,11 +7,6 @@ on:
       utbot_version:
         default: "1.0.1"
         type: string
-      username:
-        description: 'A username passed from the caller workflow'
-        default: 'john-doe'
-        required: false
-        type: string
     
 jobs:
   build:
@@ -20,14 +15,14 @@ jobs:
     steps:
     # This step checks out a copy of your repository.
     - name: Print the input name to STDOUT
-      run: echo The username is ${{ inputs.username }}
+      run: echo The username is ${{ github.event.inputs.username }}
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Download UTBot binary and its dependencies
       uses: wei/wget@v1
       with:
-        args: https://github.com/slawa4s/UTBotCpp/releases/download/v${{ inputs.utbot_version }}/utbot-release-${{ inputs.utbot_version }}.zip
-    - run: unzip utbot-release-${{ inputs.utbot_version }}.zip
+        args: https://github.com/slawa4s/UTBotCpp/releases/download/v${{ github.event.inputs.utbot_version }}/utbot-release-${{ github.event.inputs.utbot_version }}.zip
+    - run: unzip utbot-release-${{ github.event.inputs.utbot_version }}.zip
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
       with:
