@@ -26,8 +26,8 @@ jobs:
     - run: cd utbot_distr/
     - run: export CURRENT_FOLDER="$( cd $( dirname ${BASH_SOURCE[0]} ) && pwd )"
     - run: RUN_SYSTEM_SCRIPT_PATH=$CURRENT_FOLDER/utbot_run_system.sh
-    - run: UTBOT_CLI_OPTIONS="generate --project-path ${{ github.workspace }} project"
-    - run: $RUN_SYSTEM_SCRIPT_PATH "cli" "generate --project-path " ${{ github.workspace }} " project"
+    - run: UTBOT_CLI_OPTIONS="generate --project-path ../.. project"
+    - run: $RUN_SYSTEM_SCRIPT_PATH "cli" $UTBOT_CLI_OPTIONS
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
       with:
