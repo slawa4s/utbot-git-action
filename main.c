@@ -9,7 +9,7 @@ void buggy_function2(int a) {
     assert(a == 0);
 }
 
-void buggy_function3(int a) {
+int buggy_function3(int a) {
     return 1/a;
 }
 
