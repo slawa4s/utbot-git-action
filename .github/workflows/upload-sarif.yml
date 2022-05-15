@@ -24,7 +24,7 @@ jobs:
       with:
         add: 'tests saifOutput.sarif'
         author_name: 'github-actions[utbot]'
-        message: 'added tests and sarif'
+        message: 'add tests and sarif'
         push: true
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
