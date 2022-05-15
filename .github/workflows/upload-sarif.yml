@@ -19,8 +19,9 @@ jobs:
       with:
         args: https://github.com/slawa4s/UTBotCpp/releases/download/v${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip
     - run: unzip utbot-release-${{ env.utbot_version }}.zip
+    - run: ls
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
       with:
         # Path to SARIF file relative to the root of the repository
-        sarif_file: project/saifOutput.sarif
+        sarif_file: saifOutput.sarif
