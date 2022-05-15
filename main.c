@@ -13,12 +13,12 @@ int buggy_function3(int a) {
     return 1/a;
 }
 
-int ritasexample(int a) {
-    return foo(a);
-}
-
 int foo(int a) {
     return assert(a == 13);
+}
+
+int ritasexample(int a) {
+    return foo(a);
 }
 
 int main(void) {
