@@ -18,8 +18,5 @@ jobs:
     - run: unzip "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -d "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/"
     - run: chmod +x "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/unpack_and_run_utbot.sh"
     - run: cd ${{ github.workspace }}/utbot-release-${{ env.utbot_version }} && ./unpack_and_run_utbot.sh
-    - run: cd ${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot_distr/ && export CURRENT_FOLDER="$( cd $( dirname ${BASH_SOURCE[0]} ) && pwd )"
-    - run: RUN_SYSTEM_SCRIPT_PATH=$CURRENT_FOLDER/utbot_run_system.sh
-    - run: UTBOT_CLI_OPTIONS="generate --project-path ${{ github.workspace }} project"
-    - run: $RUN_SYSTEM_SCRIPT_PATH "cli" $UTBOT_CLI_OPTIONS
+    - run: cd ${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot_distr/ && export CURRENT_FOLDER="$( cd $( dirname ${BASH_SOURCE[0]} ) && pwd )" && RUN_SYSTEM_SCRIPT_PATH=$CURRENT_FOLDER/utbot_run_system.sh && $RUN_SYSTEM_SCRIPT_PATH "cli" "generate --project-path ${{ github.workspace }} project"
     - run: ls
