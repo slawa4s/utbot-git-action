@@ -14,11 +14,15 @@ jobs:
     # This step checks out a copy of your repository.
     - name: Checkout repository
       uses: actions/checkout@v2
+    - run: mkdir utbot-release-${{ env.utbot_version }}
+    - run: cd utbot-release-${{ env.utbot_version }}
     - name: Download UTBot binary and its dependencies
       uses: wei/wget@v1
       with:
         args: https://github.com/slawa4s/UTBotCpp/releases/download/v${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip
     - run: unzip utbot-release-${{ env.utbot_version }}.zip
+    - run: chmod +x unpack_and_run_utbot.sh
+    - run: ./unpack_and_run_utbot.sh
     - run: ls
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
