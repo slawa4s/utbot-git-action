@@ -6,7 +6,7 @@ on:
       test_push_info:
         description: 'Do tests need to be pushed'
         required: true
-        default: 'yes' 
+        default: 'true' 
         type: choice
         options:
         - yes
@@ -20,7 +20,6 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{ github.event.inputs.test_push_info }}
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Download server executable
@@ -37,12 +36,21 @@ jobs:
           RUN_SYSTEM_SCRIPT_PATH=$CURRENT_FOLDER/utbot_run_system.sh
           UTBOT_CLI_OPTIONS="generate --project-path ${{ github.workspace }} project"
           $RUN_SYSTEM_SCRIPT_PATH "cli" $UTBOT_CLI_OPTIONS
-    - name: Push into master
+    - name: Push into master with tests
+      if: ${{ github.event.inputs.test_push_info }} == 'true'
       uses: EndBug/add-and-commit@v9
       with:
         add: 'tests saifOutput.sarif'
         author_name: 'github-actions[utbot]'
         message: 'UTBot code analysis plus tests'
+        push: true
+    - name: Push into master without tests
+      if: ${{ github.event.inputs.test_push_info }} == 'false'
+      uses: EndBug/add-and-commit@v9
+      with:
+        add: 'saifOutput.sarif'
+        author_name: 'github-actions[utbot]'
+        message: 'UTBot code analysis'
         push: true
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
