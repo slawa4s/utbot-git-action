@@ -3,15 +3,14 @@ name: "Check"
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'
+      test_push_info:
+        description: 'Do tests need to be pushed'
         required: true
-        default: 'warning' 
+        default: 'true' 
         type: choice
         options:
-        - info
-        - warning
-        - debug 
+        - yes
+        - no
   
 env:
   utbot_version: "1.0.1"
@@ -21,4 +20,12 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{ github.event.inputs.logLevel }}
+    - run: echo ${{ github.event.inputs.test_push_info }}
+    - if: ${{ github.event.inputs.test_push_info }} == 'Yes'
+      run: echo 'Yes'
+    - if: ${{ github.event.inputs.test_push_info }} == 'No'
+      run: echo 'No'
+    - if: ${{ github.event.inputs.test_push_info }} == 'true'
+      run: echo 'true'
+    - if: ${{ github.event.inputs.test_push_info }} == 'false'
+      run: echo 'false'
