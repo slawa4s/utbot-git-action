@@ -21,10 +21,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: echo 'Yes'
-      if: ${{ github.event.inputs.test_push_info }} == 'Yes'
+      if: github.event.inputs.test_push_info == 'Yes'
     - run: echo 'No'
-      if: ${{ github.event.inputs.test_push_info }} == 'No'
+      if: github.event.inputs.test_push_info == 'No'
     - run: echo 'true'
-      if: ${{ github.event.inputs.test_push_info }} == 'true'
+      if: github.event.inputs.test_push_info == 'true'
     - run: echo 'false'
-      if: ${{ github.event.inputs.test_push_info }} == 'false'
+      if: github.event.inputs.test_push_info == 'false'
