@@ -6,12 +6,11 @@ on:
       test_push_info:
         description: 'Do tests need to be pushed'
         required: true
-        default: 'Yes' 
+        default: 'yes' 
         type: choice
         options:
         - yes
         - no
-        - heh
   
 env:
   utbot_version: "1.0.1"
@@ -21,7 +20,7 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
-    - run: echo "${{ inputs.tests_push }}"
+    - run: echo ${{ github.event.inputs.test_push_info }}
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Download server executable
