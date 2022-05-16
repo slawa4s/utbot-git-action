@@ -1,4 +1,4 @@
-name: "UTBot code analysis"
+name: "Check"
 
 on:
   workflow_dispatch:
