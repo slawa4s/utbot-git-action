@@ -1,0 +1,22 @@
+name: "UTBot code analysis"
+
+on:
+  workflow_dispatch:
+    inputs:
+      tests_push:
+        description:  Do tests need to be commited
+        required: true
+        type: choice
+        options: 
+        - Yes
+        - No
+  
+env:
+  utbot_version: "1.0.1"
+    
+jobs:
+  build:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "${{ inputs.tests_push }}"
