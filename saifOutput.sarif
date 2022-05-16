@@ -105,7 +105,7 @@
                         }
                     ],
                     "message": {
-                        "text": "ASSERTION FAIL: a == 0"
+                        "text": "ASSERTION FAIL: a != 16"
                     },
                     "ruleId": "assert.err"
                 },
