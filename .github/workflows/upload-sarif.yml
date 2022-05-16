@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       tests_push:
-        description:  Does tests needs to be pushed
+        description:  Do tests need to be commited
         required: true
         type: choice
         options: 
-        - yes
-        - no
+        - Yes
+        - No
   
 env:
   utbot_version: "1.0.1"
@@ -40,7 +40,7 @@ jobs:
       with:
         add: 'tests saifOutput.sarif'
         author_name: 'github-actions[utbot]'
-        message: 'add tests and sarif'
+        message: 'UTBot code analysis plus tests'
         push: true
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
