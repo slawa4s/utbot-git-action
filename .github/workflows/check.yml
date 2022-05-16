@@ -20,12 +20,11 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{ github.event.inputs.test_push_info }}
-    - if: ${{ github.event.inputs.test_push_info }} == 'Yes'
-      run: echo 'Yes'
-    - if: ${{ github.event.inputs.test_push_info }} == 'No'
-      run: echo 'No'
-    - if: ${{ github.event.inputs.test_push_info }} == 'true'
-      run: echo 'true'
-    - if: ${{ github.event.inputs.test_push_info }} == 'false'
-      run: echo 'false'
+    - run: echo 'Yes'
+      if: ${{ github.event.inputs.test_push_info }} == 'Yes'
+    - run: echo 'No'
+      if: ${{ github.event.inputs.test_push_info }} == 'No'
+    - run: echo 'true'
+      if: ${{ github.event.inputs.test_push_info }} == 'true'
+    - run: echo 'false'
+      if: ${{ github.event.inputs.test_push_info }} == 'false'
