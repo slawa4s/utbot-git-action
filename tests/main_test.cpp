@@ -26,8 +26,8 @@ TEST(regression, buggy_function2_test_1)
 
 TEST(regression, buggy_function3_test_1)
 {
-    int actual = buggy_function3(1);
-    EXPECT_EQ(1, actual);
+    int actual = buggy_function3(2);
+    EXPECT_EQ(0, actual);
 }
 
 
