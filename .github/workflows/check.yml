@@ -3,13 +3,15 @@ name: "Check"
 on:
   workflow_dispatch:
     inputs:
-      tests_push:
-        description:  Do tests need to be commited
+      logLevel:
+        description: 'Log level'
         required: true
+        default: 'warning' 
         type: choice
-        options: 
-        - Yes
-        - No
+        options:
+        - info
+        - warning
+        - debug 
   
 env:
   utbot_version: "1.0.1"
@@ -19,4 +21,4 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
-    - run: echo "${{ inputs.tests_push }}"
+    - run: echo ${{ github.event.inputs.logLevel }}
