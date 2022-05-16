@@ -3,11 +3,12 @@ name: "UTBot code analysis"
 on:
   workflow_dispatch:
     inputs:
-      tests_push:
-        description:  Do tests need to be commited
+      test_push_info:
+        description: 'Do tests need to be pushed'
         required: true
+        default: 'Yes' 
         type: choice
-        options: 
+        options:
         - Yes
         - No
   
