@@ -6,7 +6,7 @@ void buggy_function1(int a) {
 }
 
 void buggy_function2(int a) {
-    assert(a == 0);
+    assert(a != 16);
 }
 
 int buggy_function3(int a) {
