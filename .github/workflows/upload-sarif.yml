@@ -1,4 +1,4 @@
-name: "Upload SARIF"
+name: "UTBot code analysis"
 
 on:
   workflow_dispatch:
