@@ -19,15 +19,16 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
+    - run: echo "${{ inputs.tests_push }}"
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Download server executable
       run: |
-           mkdir utbot-release-${{ env.utbot_version }}
+           mkdir "utbot-release-${{ env.utbot_version }}"
            wget "https://github.com/slawa4s/UTBotCpp/releases/download/v${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -P "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}"
            unzip "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -d "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/"
            chmod +x "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/unpack_and_run_utbot.sh"
-           cd ${{ github.workspace }}/utbot-release-${{ env.utbot_version }} && ./unpack_and_run_utbot.sh
+           cd "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}" && ./unpack_and_run_utbot.sh
     - name: Testing project
       run: |       
           cd "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot_distr"
