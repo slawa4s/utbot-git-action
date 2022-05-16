@@ -37,7 +37,7 @@ jobs:
           UTBOT_CLI_OPTIONS="generate --project-path ${{ github.workspace }} project"
           $RUN_SYSTEM_SCRIPT_PATH "cli" $UTBOT_CLI_OPTIONS
     - name: Push into master with tests
-      if: ${{ github.event.inputs.test_push_info }} == 'true'
+      if: github.event.inputs.test_push_info == 'true'
       uses: EndBug/add-and-commit@v9
       with:
         add: 'tests saifOutput.sarif'
@@ -45,7 +45,7 @@ jobs:
         message: 'UTBot code analysis plus tests'
         push: true
     - name: Push into master without tests
-      if: ${{ github.event.inputs.test_push_info }} == 'false'
+      if: github.event.inputs.test_push_info == 'false'
       uses: EndBug/add-and-commit@v9
       with:
         add: 'saifOutput.sarif'
