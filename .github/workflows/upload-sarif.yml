@@ -11,6 +11,14 @@ on:
         options:
         - yes
         - no
+      test_delete_info:
+        description: 'Do old tests need to be deleted'
+        required: true
+        default: 'true' 
+        type: choice
+        options:
+        - yes
+        - no
   
 env:
   utbot_version: "1.0.1"
@@ -36,6 +44,9 @@ jobs:
           RUN_SYSTEM_SCRIPT_PATH=$CURRENT_FOLDER/utbot_run_system.sh
           UTBOT_CLI_OPTIONS="generate --project-path ${{ github.workspace }} project"
           $RUN_SYSTEM_SCRIPT_PATH "cli" $UTBOT_CLI_OPTIONS
+    - name: Delete old tests
+      if: github.event.inputs.test_delete_info == 'true'
+      run: rm -r tests/
     - name: Push into master with tests
       if: github.event.inputs.test_push_info == 'true'
       uses: EndBug/add-and-commit@v9
