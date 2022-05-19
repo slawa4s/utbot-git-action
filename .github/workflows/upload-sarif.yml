@@ -41,7 +41,7 @@ jobs:
     - name: Download server executable
       run: |
            mkdir "utbot-release-${{ env.utbot_version }}"
-           wget "https://github.com/slawa4s/UTBotCpp/releases/download/v${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -P "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}"
+           wget "https://github.com/olezhabobrov/UTBotCpp/releases/download/v${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -P "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}"
            unzip "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -d "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/"
            chmod +x "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/unpack_and_run_utbot.sh"
            cd "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}" && ./unpack_and_run_utbot.sh
@@ -56,7 +56,7 @@ jobs:
       if: github.event.inputs.test_push_info == 'true'
       uses: EndBug/add-and-commit@v9
       with:
-        add: 'tests saifOutput.sarif'
+        add: 'tests codeAnalysis'
         author_name: 'github-actions[utbot]'
         message: 'UTBot code analysis add sarif and tests'
         push: true
@@ -64,12 +64,12 @@ jobs:
       if: github.event.inputs.test_push_info == 'false'
       uses: EndBug/add-and-commit@v9
       with:
-        add: 'saifOutput.sarif'
+        add: 'codeAnalysis'
         author_name: 'github-actions[utbot]'
         message: 'UTBot code analysis add sarif'
         push: true
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
       with:
-        sarif_file: saifOutput.sarif
+        sarif_file: codeAnalysis/project_code_analysis.sarif
     
