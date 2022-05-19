@@ -14,7 +14,7 @@ on:
       test_delete_info:
         description: 'Do old tests need to be deleted'
         required: true
-        default: 'true' 
+        default: 'false' 
         type: choice
         options:
         - yes
@@ -30,6 +30,14 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+    - name: Delete old tests
+      if: github.event.inputs.test_delete_info == 'true'
+      uses: EndBug/add-and-commit@v9
+      with:
+        remove: 'tests'
+        author_name: 'github-actions[utbot]'
+        message: 'UTBot code analysis delete old tests'
+        push: true
     - name: Download server executable
       run: |
            mkdir "utbot-release-${{ env.utbot_version }}"
@@ -44,16 +52,13 @@ jobs:
           RUN_SYSTEM_SCRIPT_PATH=$CURRENT_FOLDER/utbot_run_system.sh
           UTBOT_CLI_OPTIONS="generate --project-path ${{ github.workspace }} project"
           $RUN_SYSTEM_SCRIPT_PATH "cli" $UTBOT_CLI_OPTIONS
-    - name: Delete old tests
-      if: github.event.inputs.test_delete_info == 'true'
-      run: rm -r tests/
     - name: Push into master with tests
       if: github.event.inputs.test_push_info == 'true'
       uses: EndBug/add-and-commit@v9
       with:
         add: 'tests saifOutput.sarif'
         author_name: 'github-actions[utbot]'
-        message: 'UTBot code analysis plus tests'
+        message: 'UTBot code analysis add sarif and tests'
         push: true
     - name: Push into master without tests
       if: github.event.inputs.test_push_info == 'false'
@@ -61,7 +66,7 @@ jobs:
       with:
         add: 'saifOutput.sarif'
         author_name: 'github-actions[utbot]'
-        message: 'UTBot code analysis'
+        message: 'UTBot code analysis add sarif'
         push: true
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
