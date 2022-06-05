@@ -9,7 +9,6 @@ on:
         required: true
         default: true 
         type: boolean
-        
       test_delete_info:
         description: 'Do old tests need to be deleted'
         required: true
@@ -27,6 +26,7 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      
     - name: Delete old tests
       if: github.event.inputs.test_delete_info == 'true'
       uses: EndBug/add-and-commit@v9
@@ -34,7 +34,7 @@ jobs:
         remove: 'tests'
         author_name: 'github-actions[utbot]'
         message: 'UTBot code analysis delete old tests'
-        push: true
+        
     - name: Download server executable
       run: |
            mkdir "utbot-release-${{ env.utbot_version }}"
@@ -42,6 +42,7 @@ jobs:
            unzip "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -d "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/"
            chmod +x "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/unpack_and_run_utbot.sh"
            cd "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}" && ./unpack_and_run_utbot.sh
+           
     - name: Testing project
       run: |       
           cd "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot_distr"
