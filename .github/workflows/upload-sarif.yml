@@ -1,6 +1,5 @@
 name: "UTBot code analysis"
 
-name: "UTBot code analysis"
 description: "UTBot code analysis allows adding tests and code analysis information by pull request"
 branding:
   icon: 'terminal'
