@@ -62,7 +62,6 @@ jobs:
             tests/
             codeAnalysis/
         commit-message: UTBot code analysis add tests and codeAnalysis information
-        author: 'github-actions[utbot]'
         branch-suffix: timestamp
         branch: utbote-code-analysis
         title: UTBot code analysis
@@ -75,7 +74,6 @@ jobs:
         add-paths: |
             codeAnalysis/
         commit-message: UTBot code analysis add codeAnalysis information
-        author: 'github-actions[utbot]'
         branch-suffix: timestamp
         branch: utbote-code-analysis
         title: UTBot code analysis
