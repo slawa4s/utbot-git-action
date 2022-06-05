@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: UTBot code analysis
-      uses: slawa4s/Utbot-Action@test-1.0.3
+      uses: slawa4s/Utbot-Action@test-1.0.4
