@@ -59,7 +59,7 @@ jobs:
         add: 'tests codeAnalysis'
         author_name: 'github-actions[utbot]'
         message: 'UTBot code analysis add sarif and tests'
-        push: true
+        new_branch: utbot-code-analysis
     - name: Push into master without tests
       if: github.event.inputs.test_push_info == 'false'
       uses: EndBug/add-and-commit@v9
@@ -67,9 +67,8 @@ jobs:
         add: 'codeAnalysis'
         author_name: 'github-actions[utbot]'
         message: 'UTBot code analysis add sarif'
-        push: true
+        new_branch: utbot-code-analysis
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
       with:
         sarif_file: codeAnalysis/project_code_analysis.sarif
-    
