@@ -11,10 +11,6 @@ on:
         description: 'Do old tests need to be deleted'
         default: false
         type: boolean
-  
-env:
-  utbot_version: "1.0.1"
-  repository_name: "olezhabobrov"
     
 jobs:
   build:
@@ -34,15 +30,15 @@ jobs:
         
     - name: Download server executable
       run: |
-           mkdir "utbot-release-${{ env.utbot_version }}"
-           wget "https://github.com/${{ env.repository_name }}/UTBotCpp/releases/download/v${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -P "./utbot-release-${{ env.utbot_version }}"
-           unzip "./utbot-release-${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -d "./utbot-release-${{ env.utbot_version }}/"
-           chmod +x "./utbot-release-${{ env.utbot_version }}/unpack_and_run_utbot.sh"
-           cd "./utbot-release-${{ env.utbot_version }}" && ./unpack_and_run_utbot.sh
+           mkdir "utbot-release-1.0.1"
+           wget "https://github.com/olezhabobrov/UTBotCpp/releases/download/v1.0.1/utbot-release-1.0.1.zip" -P "./utbot-release-1.0.1"
+           unzip "./utbot-release-1.0.1/utbot-release-1.0.1.zip" -d "./utbot-release-1.0.1/"
+           chmod +x "./utbot-release-1.0.1/unpack_and_run_utbot.sh"
+           cd "./utbot-release-1.0.1" && ./unpack_and_run_utbot.sh
            
     - name: Testing project
       run: |       
-          cd "./utbot-release-${{ env.utbot_version }}/utbot_distr"
+          cd "./utbot-release-1.0.1/utbot_distr"
           export CURRENT_FOLDER="$( cd $( dirname . ) && pwd )"
           RUN_SYSTEM_SCRIPT_PATH=$CURRENT_FOLDER/utbot_run_system.sh
           UTBOT_CLI_OPTIONS="generate --project-path ../.. project"
