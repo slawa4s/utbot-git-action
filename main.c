@@ -1,19 +1,15 @@
-/*
- * Copyright (c) Huawei Technologies Co., Ltd. 2012-2021. All rights reserved.
- */
+#include <stdio.h>
+#include "assert.h"
 
-#include "src/calc.h"
-#include "lib/basic_functions.h"
+void buggy_function1(int a) {
+    assert(a == 42);
+}
 
-int main(int argc, char* argv[]) {
-    if (argc == 2) {
-        int k = atoi(argv[1]);
-        if (k == 1) {
-            return f(k);
-        } else {
-            return max_(k, 2);
-        }
-    } else {
-        return 1;
-    }
+void buggy_function2(int a) {
+    assert(a == 0);
+}
+
+int main(void) {
+    printf("Hello World!");
+    return 0;
 }
