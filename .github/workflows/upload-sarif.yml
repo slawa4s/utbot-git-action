@@ -53,24 +53,34 @@ jobs:
           RUN_SYSTEM_SCRIPT_PATH=$CURRENT_FOLDER/utbot_run_system.sh
           UTBOT_CLI_OPTIONS="generate --project-path ${{ github.workspace }} project"
           $RUN_SYSTEM_SCRIPT_PATH "cli" $UTBOT_CLI_OPTIONS
-    - name: Push into master with tests
+        
+    - name: Create Pull Request with tests and codeAnalysis information
       if: github.event.inputs.test_push_info == 'true'
-      uses: EndBug/add-and-commit@v9
+      uses: peter-evans/create-pull-request@v4
       with:
-        add: 'tests codeAnalysis'
-        author_name: 'github-actions[utbot]'
-        message: 'UTBot code analysis add sarif and tests'
-        push: true
-        new_branch: utbot-code-analysis
-    - name: Push into master without tests
+        add-paths: |
+            tests/
+            codeAnalysis/
+        commit-message: UTBot code analysis add tests and codeAnalysis information
+        author: 'github-actions[utbot]'
+        branch-suffix: timestamp
+        branch: utbote-code-analysis
+        title: UTBot code analysis
+        body: UTBot code analysis add tests and codeAnalysis information
+        
+    - name: Create Pull Request with codeAnalysis information
       if: github.event.inputs.test_push_info == 'false'
-      uses: EndBug/add-and-commit@v9
+      uses: peter-evans/create-pull-request@v4
       with:
-        add: 'codeAnalysis'
-        author_name: 'github-actions[utbot]'
-        message: 'UTBot code analysis add sarif'
-        push: true
-        new_branch: utbot-code-analysis
+        add-paths: |
+            codeAnalysis/
+        commit-message: UTBot code analysis add codeAnalysis information
+        author: 'github-actions[utbot]'
+        branch-suffix: timestamp
+        branch: utbote-code-analysis
+        title: UTBot code analysis
+        body: UTBot code analysis add codeAnalysis information
+        
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
       with:
