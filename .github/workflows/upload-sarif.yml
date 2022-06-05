@@ -18,6 +18,7 @@ on:
   
 env:
   utbot_version: "1.0.1"
+  repository_name: "olezhabobrov"
     
 jobs:
   build:
@@ -37,7 +38,7 @@ jobs:
     - name: Download server executable
       run: |
            mkdir "utbot-release-${{ env.utbot_version }}"
-           wget "https://github.com/olezhabobrov/UTBotCpp/releases/download/v${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -P "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}"
+           wget "https://github.com/${{ env.repository_name }}/UTBotCpp/releases/download/v${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -P "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}"
            unzip "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/utbot-release-${{ env.utbot_version }}.zip" -d "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/"
            chmod +x "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}/unpack_and_run_utbot.sh"
            cd "${{ github.workspace }}/utbot-release-${{ env.utbot_version }}" && ./unpack_and_run_utbot.sh
