@@ -2,76 +2,10 @@ name: "UTBot code analysis"
 
 on:
   workflow_dispatch:
-    inputs:
-      test_push_info:
-        description: 'Do tests need to be pushed'
-        default: true 
-        type: boolean
-      test_delete_info:
-        description: 'Do old tests need to be deleted'
-        default: false
-        type: boolean
     
 jobs:
   build:
-    permissions: write-all
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-      
-    - name: Delete old tests
-      if: github.event.inputs.test_delete_info == 'true'
-      uses: EndBug/add-and-commit@v9
-      with:
-        remove: 'tests'
-        author_name: 'github-actions[utbot]'
-        message: 'UTBot code analysis delete old tests'
-        
-    - name: Download server executable
-      run: |
-           mkdir "utbot-release-1.0.1"
-           wget "https://github.com/olezhabobrov/UTBotCpp/releases/download/v1.0.1/utbot-release-1.0.1.zip" -P "./utbot-release-1.0.1"
-           unzip "./utbot-release-1.0.1/utbot-release-1.0.1.zip" -d "./utbot-release-1.0.1/"
-           chmod +x "./utbot-release-1.0.1/unpack_and_run_utbot.sh"
-           cd "./utbot-release-1.0.1" && ./unpack_and_run_utbot.sh
-           
-    - name: Testing project
-      run: |       
-          cd "./utbot-release-1.0.1/utbot_distr"
-          export CURRENT_FOLDER="$( cd $( dirname . ) && pwd )"
-          RUN_SYSTEM_SCRIPT_PATH=$CURRENT_FOLDER/utbot_run_system.sh
-          UTBOT_CLI_OPTIONS="generate --project-path ../.. project"
-          $RUN_SYSTEM_SCRIPT_PATH "cli" $UTBOT_CLI_OPTIONS
-          
-    - name: Upload SARIF file
-      uses: github/codeql-action/upload-sarif@v1
-      with:
-        sarif_file: codeAnalysis/project_code_analysis.sarif
-        
-    - name: Create Pull Request with tests and codeAnalysis information
-      if: github.event.inputs.test_push_info == 'true'
-      uses: peter-evans/create-pull-request@v4
-      with:
-        add-paths: |
-            tests/
-            codeAnalysis/
-        commit-message: UTBot code analysis add tests and codeAnalysis information
-        branch-suffix: timestamp
-        branch: utbote-code-analysis
-        title: UTBot code analysis
-        body: UTBot code analysis add tests and codeAnalysis information
-        delete-branch: true
-        
-    - name: Create Pull Request with codeAnalysis information
-      if: github.event.inputs.test_push_info == 'false'
-      uses: peter-evans/create-pull-request@v4
-      with:
-        add-paths: |
-            codeAnalysis/
-        commit-message: UTBot code analysis add codeAnalysis information
-        branch-suffix: timestamp
-        branch: utbote-code-analysis
-        title: UTBot code analysis
-        body: UTBot code analysis add codeAnalysis information
-        delete-branch: true
+    - name: UTBot code analysis
+      uses: slawa4s/Utbot-Action@test-1.0.0
