@@ -6,8 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
+    permissions: write-all
     steps:
     - name: UTBot code analysis
       uses: slawa4s/Utbot-Action@test-1.0.6
