@@ -39,7 +39,7 @@ TEST(error, buggy_function1_test_2)
 
 TEST(error, buggy_function2_test_2)
 {
-    buggy_function2(1);
+    buggy_function2(2);
 }
 
 #pragma endregion
