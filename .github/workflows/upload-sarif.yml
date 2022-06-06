@@ -9,4 +9,4 @@ jobs:
     permissions: write-all
     steps:
     - name: UTBot code analysis
-      uses: slawa4s/Utbot-Action@test-1.0.12
+      uses: slawa4s/Utbot-Action@test-1.0.13
