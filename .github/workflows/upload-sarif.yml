@@ -9,6 +9,7 @@ jobs:
     permissions: write-all
     steps:
     - name: UTBot code analysis
-      uses: slawa4s/Utbot-Action@test-1.0.19
+      uses: slawa4s/Utbot-Action@test-1.0.20
       with:
         test_push_info: 'true'
+        test_delete_info: 'false'
