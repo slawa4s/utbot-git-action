@@ -1,0 +1,69 @@
+{
+    "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.4.json",
+    "runs": [
+        {
+            "results": [
+                {
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "tests/lib/multi_arrays_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 519
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/multi_arrays.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 177
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "lib/multi_arrays.c"
+                                },
+                                "region": {
+                                    "startLine": 177
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "invalid usage of null pointer"
+                    },
+                    "ruleId": "undefined_behavior.err"
+                }
+            ],
+            "tool": {
+                "driver": {
+                    "name": "utbotSARIF",
+                    "rules": []
+                }
+            }
+        }
+    ],
+    "version": "2.1.0"
+}
