@@ -13,5 +13,5 @@ jobs:
       with:
         test_push_info: 'true'
         test_delete_info: 'false'
-        utbot_version: '1.0.3'
+        utbot_version: '1.0.5'
         launch_param: 'project'
