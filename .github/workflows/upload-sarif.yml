@@ -14,5 +14,4 @@ jobs:
         test_push_info: 'true'
         test_delete_info: 'false'
         utbot_version: '2022.06.13'
-        launch_param: 'file'
-        param_name: 'main.c'
+        launch_param: 'project'
