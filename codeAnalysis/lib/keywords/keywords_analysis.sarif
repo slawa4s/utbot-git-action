@@ -1,0 +1,69 @@
+{
+    "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.4.json",
+    "runs": [
+        {
+            "results": [
+                {
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/keywords/keywords_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 113
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/keywords/keywords_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 33
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "lib/keywords/keywords_klee.c"
+                                },
+                                "region": {
+                                    "startLine": 33
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "execution reached an unreachable program point"
+                    },
+                    "ruleId": "undefined_behavior.err"
+                }
+            ],
+            "tool": {
+                "driver": {
+                    "name": "utbotSARIF",
+                    "rules": []
+                }
+            }
+        }
+    ],
+    "version": "2.1.0"
+}

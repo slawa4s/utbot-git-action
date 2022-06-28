@@ -1,0 +1,536 @@
+{
+    "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.4.json",
+    "runs": [
+        {
+            "results": [
+                {
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/memory_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 52
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "runtime/POSIX/klee_init_env.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 245
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/memory_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 21
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/memory.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 10
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "lib/memory.c"
+                                },
+                                "region": {
+                                    "startLine": 10
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "memory error: out of bound pointer"
+                    },
+                    "ruleId": "ptr.err"
+                },
+                {
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/memory_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 57
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/memory_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 32
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/memory.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 16
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "lib/memory.c"
+                                },
+                                "region": {
+                                    "startLine": 16
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "index out of bounds"
+                    },
+                    "ruleId": "undefined_behavior.err"
+                },
+                {
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/memory_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 64
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/memory_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 49
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/memory.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 22
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "lib/memory.c"
+                                },
+                                "region": {
+                                    "startLine": 22
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "index out of bounds"
+                    },
+                    "ruleId": "undefined_behavior.err"
+                },
+                {
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/memory_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 69
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/memory_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 59
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/memory.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 28
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "lib/memory.c"
+                                },
+                                "region": {
+                                    "startLine": 28
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "memory error: out of bound pointer"
+                    },
+                    "ruleId": "ptr.err"
+                },
+                {
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/memory_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 74
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/memory_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 96
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "lib/memory_klee.c"
+                                },
+                                "region": {
+                                    "startLine": 96
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "memory error: out of bound pointer"
+                    },
+                    "ruleId": "ptr.err"
+                },
+                {
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/memory_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 79
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/memory_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 103
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/memory.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 42
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "lib/memory.c"
+                                },
+                                "region": {
+                                    "startLine": 42
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "memory error: out of bound pointer"
+                    },
+                    "ruleId": "ptr.err"
+                },
+                {
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/memory_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 84
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/memory_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 115
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/memory.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 58
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "lib/memory.c"
+                                },
+                                "region": {
+                                    "startLine": 58
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "memory error: invalid pointer: free"
+                    },
+                    "ruleId": "ptr.err"
+                },
+                {
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/memory_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 89
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/memory_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 121
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/memory.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 63
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "lib/memory.c"
+                                },
+                                "region": {
+                                    "startLine": 63
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "free of alloca"
+                    },
+                    "ruleId": "free.err"
+                }
+            ],
+            "tool": {
+                "driver": {
+                    "name": "utbotSARIF",
+                    "rules": []
+                }
+            }
+        }
+    ],
+    "version": "2.1.0"
+}
