@@ -1,0 +1,81 @@
+{
+    "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.4.json",
+    "runs": [
+        {
+            "results": [
+                {
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/types/types_3_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 103
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/types/types_3_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 81
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/types/types_3.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 132
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "lib/types/types_3.c"
+                                },
+                                "region": {
+                                    "startLine": 132
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "index out of bounds"
+                    },
+                    "ruleId": "undefined_behavior.err"
+                }
+            ],
+            "tool": {
+                "driver": {
+                    "name": "utbotSARIF",
+                    "rules": []
+                }
+            }
+        }
+    ],
+    "version": "2.1.0"
+}

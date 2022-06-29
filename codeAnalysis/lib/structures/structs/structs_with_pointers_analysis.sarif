@@ -1,0 +1,546 @@
+{
+    "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.4.json",
+    "runs": [
+        {
+            "results": [
+                {
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/structures/structs/structs_with_pointers_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 246
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 34
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 22
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/structures/structs/structs_with_pointers_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 258
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 34
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 22
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/structures/structs/structs_with_pointers_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 266
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 34
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 22
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/structures/structs/structs_with_pointers_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 282
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 34
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 22
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/structures/structs/structs_with_pointers_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 294
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 48
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 29
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 22
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/structures/structs/structs_with_pointers_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 306
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 48
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 29
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 22
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/structures/structs/structs_with_pointers_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 314
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 48
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 29
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 22
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/structures/structs/structs_with_pointers_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 322
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 48
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 29
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 22
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "lib/structures/structs/structs_with_pointers.c"
+                                },
+                                "region": {
+                                    "startLine": 22
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "invalid usage of null pointer"
+                    },
+                    "ruleId": "undefined_behavior.err"
+                },
+                {
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/structures/structs/structs_with_pointers_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 330
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 62
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 40
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "/home/runner/work/utbot-git-action/utbot-git-action/tests/lib/structures/structs/structs_with_pointers_dot_c_test.cpp"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 338
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers_klee.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 62
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "lib/structures/structs/structs_with_pointers.c"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 40
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "lib/structures/structs/structs_with_pointers.c"
+                                },
+                                "region": {
+                                    "startLine": 40
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "invalid usage of null pointer"
+                    },
+                    "ruleId": "undefined_behavior.err"
+                }
+            ],
+            "tool": {
+                "driver": {
+                    "name": "utbotSARIF",
+                    "rules": []
+                }
+            }
+        }
+    ],
+    "version": "2.1.0"
+}
